@@ -13,7 +13,7 @@ ffmpeg core for golang
 package main
 
 import (
-	go_ffmepg_core "github.com/Resynz/go-ffmpeg-core"
+  go_ffmepg_core "github.com/Resynz/go-ffmpeg-core"
   "log"
 )
 
@@ -43,20 +43,20 @@ func main () {
 package main
 
 import (
-	go_ffmepg_core "github.com/Resynz/go-ffmpeg-core"
+  go_ffmepg_core "github.com/Resynz/go-ffmpeg-core"
   "log"
 )
 
 func main () {
   merge:=&go_ffmpeg_core.MergeAV{
-		Command:    "ffmpeg",
-		VideoPath:  "./test-v.mp4", // 纯视频文件路径
-		AudioPath:  "./test-a.m4a", // 纯音频文件路径
-		OutputPath: "./merge.mp4",  // 结果输出路径
-	}
-	if err:=merge.Execute();err!=nil{
-		log.Fatalf("merge failed! error:%s\n",err.Error())
-	}
+  	Command:    "ffmpeg",
+	VideoPath:  "./test-v.mp4", // 纯视频文件路径
+	AudioPath:  "./test-a.m4a", // 纯音频文件路径
+	OutputPath: "./merge.mp4",  // 结果输出路径
+  }
+  if err:=merge.Execute();err!=nil{
+	log.Fatalf("merge failed! error:%s\n",err.Error())
+  }
   log.Println("merge done.")
 }
 ```
@@ -69,7 +69,7 @@ func main () {
 package main
 
 import (
-	go_ffmepg_core "github.com/Resynz/go-ffmpeg-core"
+  go_ffmepg_core "github.com/Resynz/go-ffmpeg-core"
   "log"
 )
 
@@ -78,10 +78,10 @@ func main () {
 		Command:      "ffmpeg",
 		ResourcePath: "./test.mp4",
 		OutputPath:   "./test.mkv",
-	}
-	if err:=transform.Execute();err!=nil{
-		log.Fatalf("tranform failed! error:%s\n",err.Error())
-	}
+  }
+  if err:=transform.Execute();err!=nil{
+	log.Fatalf("tranform failed! error:%s\n",err.Error())
+  }
   log.Println("transform done.")
 }
 ```
