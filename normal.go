@@ -10,6 +10,7 @@ import (
 )
 
 func HandleError(output []byte) error {
+	fmt.Println(string(output))
 	ss := strings.Split(string(output), "\n")
 	if len(ss) == 0 {
 		return nil
