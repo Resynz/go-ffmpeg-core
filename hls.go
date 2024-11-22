@@ -21,7 +21,7 @@ type Hls struct {
 
 func (s *Hls) Execute() error {
 	args := make([]string, 0)
-	args = append(args, "-y", "-i", s.InputPath, "-c", "copy", "-bsf:a", "aac_adtstoasc", "-bsf:v", "h264_mp4toannexb")
+	args = append(args, "-y", "-i", s.InputPath, "-c:v", "libx264", "-c:a", "aac", "-bsf:a", "aac_adtstoasc")
 	args = append(args, "-f", "hls", "-hls_playlist_type", "vod")
 	if s.KeyInfoFile != "" {
 		args = append(args, "-hls_key_info_file", s.KeyInfoFile)
